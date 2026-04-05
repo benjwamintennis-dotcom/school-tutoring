@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScholarSprint</title>
+    <meta
+      name="description"
+      content="ScholarSprint turns notes, files, and photos into study guides, quizzes, step-by-step answers, and grading feedback."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scholarsprint-20260404-172802.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="ScholarSprint home">
+          <span class="brand-mark"></span>
+          <span class="brand-copy">
+            <strong>ScholarSprint</strong>
+            <small>Study Assistant</small>
+          </span>
+        </a>
+
+        <div class="topbar-meta">
+          <span>Active Tab</span>
+          <strong id="active-tab-label">Overview</strong>
+        </div>
+      </header>
+
+      <main class="app-layout">
+        <aside class="sidebar-rail">
+          <div class="sidebar-card">
+            <p class="eyebrow">ScholarSprint</p>
+            <h1>Study tools, organized.</h1>
+            <p class="sidebar-copy">Move between sources, practice, answers, and grading.</p>
+
+            <div class="sidebar-tablist" role="tablist" aria-orientation="vertical" aria-label="App sections">
+              <button
+                class="side-tab is-active"
+                id="tab-overview"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-overview"
+                data-app-tab="overview"
+              >
+                <strong>Overview</strong>
+                <small>Welcome</small>
+              </button>
+              <button
+                class="side-tab"
+                id="tab-workspace"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-workspace"
+                data-app-tab="workspace"
+                tabindex="-1"
+              >
+                <strong>Sources</strong>
+                <small>Add material</small>
+              </button>
+              <button
+                class="side-tab"
+                id="tab-generator"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-generator"
+                data-app-tab="generator"
+                tabindex="-1"
+              >
+                <strong>Generator</strong>
+                <small>Create practice</small>
+              </button>
+              <button
+                class="side-tab"
+                id="tab-qa"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-qa"
+                data-app-tab="qa"
+                tabindex="-1"
+              >
+                <strong>Single Q&amp;A</strong>
+                <small>Explain one question</small>
+              </button>
+              <button
+                class="side-tab"
+                id="tab-grading"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-grading"
+                data-app-tab="grading"
+                tabindex="-1"
+              >
+                <strong>Grading</strong>
+                <small>Review submissions</small>
+              </button>
+            </div>
+
+            <div class="sidebar-note">
+              <strong>Built for real use</strong>
+              <p>Clean inputs, focused outputs, and simple downloads.</p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel-stage">
+          <article
+            class="app-panel is-active"
+            id="panel-overview"
+            role="tabpanel"
+            aria-labelledby="tab-overview"
+            data-app-panel="overview"
+          >
+            <div class="hero">
+              <div class="hero-copy">
+                <p class="eyebrow">Smart Study Flow</p>
+                <h2>Turn class material into clean study tools.</h2>
+                <p class="hero-text">
+                  Upload files or paste text, then create study guides, quizzes, answers, and grading feedback from one simple interface.
+                </p>
+                <div class="hero-actions">
+                  <button class="button primary" type="button" data-jump-tab="workspace">
+                    Open Sources
+                  </button>
+                  <button class="button secondary" type="button" data-jump-tab="grading">
+                    Open Grading
+                  </button>
+                </div>
+                <div class="hero-metrics" aria-label="App highlights">
+                  <div class="metric">
+                    <strong>Clean Tabs</strong>
+                    <span>Each task lives in its own focused panel.</span>
+                  </div>
+                  <div class="metric">
+                    <strong>Study Pack</strong>
+                    <span>Create guides, quizzes, tests, and answer sheets.</span>
+                  </div>
+                  <div class="metric">
+                    <strong>PDF + OCR</strong>
+                    <span>Use text, documents, or photos as input.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-visual" aria-hidden="true">
+                <div class="visual-card guide-card">
+                  <span class="pill">Study Guide</span>
+                  <strong>Photosynthesis Revision Map</strong>
+                  <ul>
+                    <li>Light-dependent reactions</li>
+                    <li>Chloroplast structure</li>
+                    <li>Equation breakdown</li>
+                  </ul>
+                </div>
+                <div class="visual-card answer-card-mini">
+                  <span class="pill warm">Single Question</span>
+                  <strong>Why does glucose production depend on light?</strong>
+                  <p>
+                    The source shows that light energy powers the first stage, which creates the
+                    chemical inputs used to build glucose in the second stage.
+                  </p>
+                </div>
+                <div class="visual-card grade-card-mini">
+                  <span class="pill coral">Grade Scan</span>
+                  <strong>89% · B+</strong>
+                  <p>Strong vocabulary coverage, but two process links were missing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="overview-grid">
+              <article class="panel overview-card">
+                <div class="panel-head">
+                  <div>
+                    <p>How it works</p>
+                    <strong>Four quick steps.</strong>
+                  </div>
+                  <span class="panel-badge">Fast start</span>
+                </div>
+                <div class="mini-list">
+                  <div class="mini-item">
+                    <strong>1. Sources</strong>
+                    <span>Add the material you want to work from.</span>
+                  </div>
+                  <div class="mini-item">
+                    <strong>2. Generator</strong>
+                    <span>Create practice material and download it.</span>
+                  </div>
+                  <div class="mini-item">
+                    <strong>3. Single Q&amp;A</strong>
+                    <span>Get one clear answer with steps and a diagram.</span>
+                  </div>
+                  <div class="mini-item">
+                    <strong>4. Grading</strong>
+                    <span>Review work against the same source material.</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="panel overview-card">
+                <div class="panel-head">
+                  <div>
+                    <p>What you get</p>
+                    <strong>Simple, polished, useful.</strong>
+                  </div>
+                  <span class="panel-badge">Included</span>
+                </div>
+                <div class="mini-list">
+                  <div class="mini-item">
+                    <strong>Flexible input</strong>
+                    <span>Files, pasted text, PDFs, DOCX, and image OCR.</span>
+                  </div>
+                  <div class="mini-item">
+                    <strong>Downloads</strong>
+                    <span>Export study guides, answers, feedback, or bundles.</span>
+                  </div>
+                  <div class="mini-item">
+                    <strong>Clean layout</strong>
+                    <span>A smaller interface built for sharing and everyday use.</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article
+            class="app-panel"
+            id="panel-workspace"
+            role="tabpanel"
+            aria-labelledby="tab-workspace"
+            data-app-panel="workspace"
+            hidden
+          >
+            <div class="panel-page">
+              <div class="section-heading">
+                <p class="eyebrow">Sources</p>
+                <h2>Add the material you want to study.</h2>
+              </div>
+
+              <div class="workspace-grid">
+                <article class="panel import-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Source Input</p>
+                      <strong>Upload files or paste text.</strong>
+                    </div>
+                    <span class="panel-badge">Quick import</span>
+                  </div>
+
+                  <label class="field">
+                    <span>Files and photos</span>
+                    <input
+                      id="source-files"
+                      type="file"
+                      multiple
+                      accept=".txt,.md,.pdf,.doc,.docx,.csv,.rtf,.json,image/*"
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Pasted material</span>
+                    <textarea
+                      id="source-text"
+                      rows="9"
+                      placeholder="Paste lecture notes, worksheet text, rubric criteria, textbook excerpts, or assignment prompts."
+                    ></textarea>
+                  </label>
+
+                  <div class="action-row">
+                    <button class="button primary" id="ingest-trigger" type="button">
+                      Build Study Pack
+                    </button>
+                    <button class="button secondary" id="sample-trigger" type="button">
+                      Load Sample
+                    </button>
+                    <button class="button ghost" id="clear-trigger" type="button">
+                      Clear
+                    </button>
+                  </div>
+
+                  <p class="helper-copy">
+                    Supports text, PDFs, DOCX, spreadsheets, and photos.
+                  </p>
+
+                  <div class="status-card" id="ingest-status" data-tone="idle" aria-live="polite">
+                    Waiting for source material.
+                  </div>
+                </article>
+
+                <article class="panel overview-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Source Overview</p>
+                      <strong>Your source is summarized here.</strong>
+                    </div>
+                    <span class="panel-badge">Live analysis</span>
+                  </div>
+
+                  <div class="stats-grid">
+                    <div class="stat-chip">
+                      <small>Sources</small>
+                      <strong id="source-count">0</strong>
+                    </div>
+                    <div class="stat-chip">
+                      <small>Words</small>
+                      <strong id="source-words">0</strong>
+                    </div>
+                    <div class="stat-chip">
+                      <small>Questions</small>
+                      <strong id="source-questions">0</strong>
+                    </div>
+                    <div class="stat-chip">
+                      <small>Concepts</small>
+                      <strong id="source-concepts">0</strong>
+                    </div>
+                  </div>
+
+                  <div class="source-list" id="source-list">
+                    <div class="empty-state">
+                      Import material to see parsed files, extracted OCR text, and source coverage.
+                    </div>
+                  </div>
+
+                  <div class="preview-card">
+                    <div class="preview-head">
+                      <p>Preview</p>
+                      <span id="preview-title">No source loaded</span>
+                    </div>
+                    <div class="preview-text" id="source-preview">
+                      Your combined study text will appear here after ingestion.
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-panel"
+            id="panel-generator"
+            role="tabpanel"
+            aria-labelledby="tab-generator"
+            data-app-panel="generator"
+            hidden
+          >
+            <div class="panel-page">
+              <div class="section-heading split">
+                <div>
+                  <p class="eyebrow">Generator</p>
+                  <h2>Build study guides, quizzes, and practice tests from the imported material.</h2>
+                </div>
+                <div class="toolbar">
+                  <label class="inline-field">
+                      <span>Output</span>
+                    <select id="output-type">
+                      <option value="study-guide">Study Guide</option>
+                      <option value="quiz">Quiz</option>
+                      <option value="test">Practice Test</option>
+                    </select>
+                  </label>
+                  <label class="inline-field">
+                    <span>Questions</span>
+                    <select id="question-count">
+                      <option value="8">8</option>
+                      <option value="12" selected>12</option>
+                      <option value="16">16</option>
+                    </select>
+                  </label>
+                  <label class="inline-field">
+                    <span>Difficulty</span>
+                    <select id="difficulty">
+                      <option value="foundation">Foundation</option>
+                      <option value="standard" selected>Standard</option>
+                      <option value="challenge">Challenge</option>
+                    </select>
+                  </label>
+                  <button class="button primary" id="generate-trigger" type="button">
+                    Generate Artifact
+                  </button>
+                </div>
+              </div>
+
+              <article class="panel support-panel">
+                <div class="panel-head">
+                  <div>
+                    <p>Generator Source</p>
+                    <strong>Add files or text here, or use your current source.</strong>
+                  </div>
+                  <span class="panel-badge">Files or text</span>
+                </div>
+
+                <div class="support-grid">
+                  <label class="field">
+                    <span>Source files</span>
+                    <input
+                      id="generator-files"
+                      type="file"
+                      multiple
+                      accept=".txt,.md,.pdf,.doc,.docx,.csv,.rtf,.json,image/*"
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Source text</span>
+                    <textarea
+                      id="generator-text"
+                      rows="6"
+                      placeholder="Paste source text here for this tab."
+                    ></textarea>
+                  </label>
+                </div>
+
+                <div class="status-card" id="generator-status" data-tone="idle" aria-live="polite">
+                  Using your current source unless you add files or text here.
+                </div>
+              </article>
+
+              <div class="generator-grid">
+                <article class="panel artifact-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Artifact Preview</p>
+                      <strong>Preview and export the current result.</strong>
+                    </div>
+                    <span class="panel-badge" id="artifact-badge">Nothing generated yet</span>
+                  </div>
+
+                  <div class="download-row">
+                    <button class="button secondary" id="download-current" type="button" disabled>
+                      Download Current
+                    </button>
+                    <button class="button secondary" id="download-all" type="button" disabled>
+                      Download Study Pack
+                    </button>
+                    <button class="button ghost" id="print-current" type="button" disabled>
+                      Print / Save PDF
+                    </button>
+                  </div>
+
+                  <article class="artifact-output" id="artifact-output">
+                    <div class="empty-state">
+                      Generate a study guide, quiz, or practice test to preview it here.
+                    </div>
+                  </article>
+                </article>
+
+                <article class="panel library-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Artifact Library</p>
+                      <strong>Keep multiple versions in one place.</strong>
+                    </div>
+                    <span class="panel-badge">Reusable</span>
+                  </div>
+
+                  <div class="artifact-list" id="artifact-list">
+                    <div class="empty-state">
+                      Your generated study guide, quiz, and test files will collect here.
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-panel"
+            id="panel-qa"
+            role="tabpanel"
+            aria-labelledby="tab-qa"
+            data-app-panel="qa"
+            hidden
+          >
+            <div class="panel-page">
+              <div class="section-heading split">
+                <div>
+                  <p class="eyebrow">Single Question Answerer</p>
+                  <h2>Answer one question with steps and a simple diagram.</h2>
+                </div>
+                <div class="toolbar">
+                  <button class="button secondary" id="refresh-questions" type="button">
+                    Refresh File Questions
+                  </button>
+                  <button class="button ghost" id="download-answer" type="button" disabled>
+                    Download Answer
+                  </button>
+                </div>
+              </div>
+
+              <article class="panel support-panel">
+                <div class="panel-head">
+                  <div>
+                    <p>Q&amp;A Source</p>
+                    <strong>Add files or text here, or use your current source.</strong>
+                  </div>
+                  <span class="panel-badge">Files or text</span>
+                </div>
+
+                <div class="support-grid">
+                  <label class="field">
+                    <span>Source files</span>
+                    <input
+                      id="qa-source-files"
+                      type="file"
+                      multiple
+                      accept=".txt,.md,.pdf,.doc,.docx,.csv,.rtf,.json,image/*"
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Source text</span>
+                    <textarea
+                      id="qa-source-text"
+                      rows="6"
+                      placeholder="Paste source text here for this tab."
+                    ></textarea>
+                  </label>
+                </div>
+
+                <div class="status-card" id="qa-status" data-tone="idle" aria-live="polite">
+                  Using your current source unless you add files or text here.
+                </div>
+              </article>
+
+              <div class="qa-grid">
+                <article class="panel question-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Questions from Source</p>
+                      <strong>Choose a question or ask your own.</strong>
+                    </div>
+                    <span class="panel-badge" id="question-bank-badge">0 questions</span>
+                  </div>
+
+                  <div class="question-list" id="question-list">
+                    <div class="empty-state">
+                      Add a source to load suggested questions here.
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel answer-panel">
+                  <label class="field">
+                    <span>Single question</span>
+                    <textarea
+                      id="qa-input"
+                      rows="5"
+                      placeholder="Ask one question from the source, or click a question from the left column."
+                    ></textarea>
+                  </label>
+
+                  <div class="action-row">
+                    <button class="button primary" id="answer-trigger" type="button">
+                      Explain Answer
+                    </button>
+                  </div>
+
+                  <div class="answer-shell">
+                    <div class="answer-summary" id="answer-summary">
+                      The answer summary will appear here once a question is processed.
+                    </div>
+
+                    <div class="answer-block">
+                      <h3>Step-by-step explanation</h3>
+                      <div class="step-list" id="answer-steps">
+                        <div class="empty-state">No explanation generated yet.</div>
+                      </div>
+                    </div>
+
+                    <div class="answer-block">
+                      <h3>Diagram</h3>
+                      <div class="diagram-shell" id="diagram-output">
+                        <div class="empty-state">A source-based diagram will render here.</div>
+                      </div>
+                    </div>
+
+                    <div class="answer-block">
+                      <h3>Evidence from source</h3>
+                      <div class="evidence-list" id="answer-evidence">
+                        <div class="empty-state">Relevant source lines will appear here.</div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-panel"
+            id="panel-grading"
+            role="tabpanel"
+            aria-labelledby="tab-grading"
+            data-app-panel="grading"
+            hidden
+          >
+            <div class="panel-page">
+                <div class="section-heading split">
+                  <div>
+                    <p class="eyebrow">Grading Tab</p>
+                  <h2>Review a response against your source and assign a grade.</h2>
+                  </div>
+                <div class="toolbar">
+                  <button class="button ghost" id="download-grade" type="button" disabled>
+                    Download Feedback
+                  </button>
+                </div>
+              </div>
+
+              <div class="grading-grid">
+                <article class="panel submission-panel">
+                  <div class="panel-head">
+                    <div>
+                      <p>Submission Input</p>
+                      <strong>Upload the response or paste it in.</strong>
+                    </div>
+                    <span class="panel-badge">Quick review</span>
+                  </div>
+
+                  <label class="field">
+                    <span>Reference source files</span>
+                    <input
+                      id="grading-source-files"
+                      type="file"
+                      multiple
+                      accept=".txt,.md,.pdf,.doc,.docx,.csv,.rtf,.json,image/*"
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Reference source text</span>
+                    <textarea
+                      id="grading-source-text"
+                      rows="5"
+                      placeholder="Optional. Paste reference material here, or use your current source."
+                    ></textarea>
+                  </label>
+
+                  <label class="field">
+                    <span>Submission file or photo</span>
+                    <input
+                      id="grading-file"
+                      type="file"
+                      accept=".txt,.md,.pdf,.doc,.docx,image/*"
+                    />
+                  </label>
+
+                  <label class="field">
+                    <span>Pasted submission</span>
+                    <textarea
+                      id="grading-text"
+                      rows="8"
+                      placeholder="Paste a response, essay, worksheet answers, or teacher notes."
+                    ></textarea>
+                  </label>
+
+                  <label class="field">
+                    <span>Optional grading focus</span>
+                    <textarea
+                      id="grading-rubric"
+                      rows="4"
+                      placeholder="Example: reward accuracy, use of vocabulary, complete process explanation, and evidence."
+                    ></textarea>
+                  </label>
+
+                  <div class="action-row">
+                    <button class="button primary" id="grade-trigger" type="button">
+                      Scan and Grade
+                    </button>
+                  </div>
+
+                  <div class="status-card" id="grading-status" data-tone="idle" aria-live="polite">
+                    No submission scanned yet.
+                  </div>
+                </article>
+
+                <article class="panel feedback-panel">
+                  <div class="grade-hero">
+                    <div class="grade-chip">
+                      <small>Score</small>
+                      <strong id="grade-score">0%</strong>
+                    </div>
+                    <div class="grade-chip">
+                      <small>Letter</small>
+                      <strong id="grade-letter">-</strong>
+                    </div>
+                    <div class="grade-chip">
+                      <small>Confidence</small>
+                      <strong id="grade-confidence">0%</strong>
+                    </div>
+                  </div>
+
+                  <div class="feedback-grid">
+                    <div class="feedback-card">
+                      <h3>Breakdown</h3>
+                      <div class="breakdown-list" id="score-breakdown">
+                        <div class="empty-state">No grading breakdown yet.</div>
+                      </div>
+                    </div>
+
+                    <div class="feedback-card">
+                      <h3>Strengths</h3>
+                      <div class="feedback-list" id="strengths-list">
+                        <div class="empty-state">Strengths will appear after grading.</div>
+                      </div>
+                    </div>
+
+                    <div class="feedback-card">
+                      <h3>Needs Work</h3>
+                      <div class="feedback-list" id="gaps-list">
+                        <div class="empty-state">Missing ideas and weak areas will appear here.</div>
+                      </div>
+                    </div>
+
+                    <div class="feedback-card feedback-card-wide">
+                      <h3>Teacher Summary</h3>
+                      <div class="summary-note" id="feedback-summary">
+                        The grading summary will appear here after a scan.
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" defer></script>
+    <script src="scholarsprint-20260404-172802.js" defer></script>
+  </body>
+</html>
